@@ -8,9 +8,8 @@ export default class ThirdPartyFiles extends LightningElement {
         if(this.isLibLoaded){
             return
         } else {
-            Promise.all([
-                loadScript(this,MOMENT+'/moment/moment.min.js')
-            ]).then(()=>{
+
+                loadScript(this,MOMENT+'/moment/moment.min.js').then(()=>{
                 //success
                 this.setDateOnScreen()
             }).catch(error=>{

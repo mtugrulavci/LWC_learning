@@ -6,7 +6,7 @@ export default class NavigateToLwc extends NavigationMixin(LightningElement) {
         var defination = {
             componentDef:'c:navigationLwcTarget',
             attributes:  {
-                recordId: '3543645764'
+                recordId: '3543645764' // pass the data to targeted LWC page- record id is the var in the target lwc which is made global by using api on the target lwc
             }
         }
        this[NavigationMixin.Navigate]({

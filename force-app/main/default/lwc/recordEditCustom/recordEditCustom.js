@@ -32,4 +32,13 @@ export default class RecordEditCustom extends LightningElement {
         this.dispatchEvent(toastEvent)
 
     }
+    handleError(event){
+        const toastEvent = new ShowToastEvent({
+             title: 'Error occured',
+             message : "Record ID " + event.detail.message,
+             variant: 'error'
+         })
+         this.dispatchEvent(toastEvent)
+ 
+     }
 }

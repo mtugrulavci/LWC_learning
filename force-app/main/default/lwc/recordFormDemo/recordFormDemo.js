@@ -10,6 +10,7 @@ export default class RecordFormDemo extends LightningElement {
     @api objectApiName
     objectName = ACCOUNT_OBJECT
     fieldList =[NAME_FIELD,ANNUAL_REVENUE_FIELD,TYPE_FIELD,INDUSTRY_FIELD]
+    
     successsHandler(event){
         console.log('event.detail.id')
       const toastEvent =   new ShowToastEvent({

@@ -1,4 +1,5 @@
 import { LightningElement,api } from 'lwc';
+import {ShowToastEvent} from 'lightning/platformShowToastEvent'
 
 import CONTACT_OBJECT from "@salesforce/schema/Contact"
 import NAME_FIELD  from "@salesforce/schema/Contact.Name"
@@ -25,4 +26,16 @@ export default class RecordEditForm extends LightningElement {
                 })
             }
         }
+
+        successHandler(event){
+            const toastEvent = new ShowToastEvent({
+                 title: 'Account Created',
+                 message : "Record ID " + event.detail.id,
+                 variant: 'success'
+             })
+             this.dispatchEvent(toastEvent)
+     
+         }
+
+
 }

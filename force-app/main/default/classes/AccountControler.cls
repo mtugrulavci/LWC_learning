@@ -3,4 +3,8 @@ public with sharing class AccountControler {
 public static List<Account> getAccountList(){
     return [SELECT id, Name, Type, Industry from Account LIMIT 5];
 }
+    @AuraEnabled(cacheable=true)
+public static List<Account> filterAccountByType(String type){
+    return [SELECT id, Name, Type  from Account where Type=:type LIMIT 5];
+}
 }
